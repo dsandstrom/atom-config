@@ -1,0 +1,113 @@
+'.workspace':
+  'f12': 'window:toggle-dev-tools'
+
+# '.platform-linux .workspace .pane.active > .item-views > .editor':
+#   'ctrl-c': 'clipboard-history:copy'
+
+'.platform-linux body':
+  'ctrl-{': 'pane:show-previous-item'
+  'ctrl-}': 'pane:show-next-item'
+
+'.platform-linux atom-text-editor.vim-mode.insert-mode':
+  'ctrl-w': 'core:close'
+'.platform-linux atom-text-editor.vim-mode.command-mode':
+  'ctrl-shift-t': 'pane:reopen-closed-item'
+
+# Ruby Test
+# '.platform-linux .workspace':
+#   'ctrl-shift-x': 'ruby-test:toggle'
+#   'ctrl-shift-W': 'ruby-test:test-previous'
+#   'ctrl-shift-c': 'ruby-test:cancel'
+#   'f12': 'window:toggle-dev-tools'
+#   'ctrl-=': 'native!'
+#   'ctrl--': 'native!'
+
+'.platform-darwin .workspace':
+  # 'f12': 'window:toggle-dev-tools'
+  'cmd-=': 'native!'
+  'cmd-+': 'native!'
+  'cmd--': 'native!'
+  'cmd-_': 'native!'
+  'cmd-q': 'maybs-quit:toggle'
+  # 'cmd'
+  # 'cmd-s': 'custom:save'
+  'cmd-h': 'null'
+  'cmd-k cmd-[': 'window:focus-pane-on-left'
+  'cmd-k cmd-]': 'window:focus-pane-on-right'
+
+'.platform-linux .workspace .editor':
+  # Word Jumper
+  # 'alt-right': 'word-jumper:move-right'
+  # 'alt-left': 'word-jumper:move-left'
+  # 'alt-shift-right': 'word-jumper:select-right'
+  # 'alt-shift-left': 'word-jumper:select-left'
+  'ctrl-space': 'non-navigation:move-right'
+  # Basic
+  'ctrl-alt-t': 'editor:transpose'
+  # Duplicate and Comment
+  # 'ctrl-alt-/': 'duplicate-and-comment:duplicateAndComment'
+  # 'ctrl-r': 'goto:file-symbol'
+  # 'ctrl-shift-t': 'goto:project-symbol'
+  # 'ctrl-alt-down': 'goto:declaration'
+  # 'cmd-"': 'toggle-quotes:toggle'
+
+'.platform-darwin .workspace .editor':
+  # Word Jumper
+  # 'alt-right': 'word-jumper:move-right'
+  # 'alt-left': 'word-jumper:move-left'
+  # 'alt-shift-right': 'word-jumper:select-right'
+  # 'alt-shift-left': 'word-jumper:select-left'
+  'cmd-space': 'non-navigation:move-right'
+  # 'cmd-space': 'editor:move-to-end-of-word'
+  # Basic
+  # Duplicate and Comment
+  # 'ctrl-cmd-/': 'duplicate-and-comment:duplicateAndComment'
+  # 'ctrl-r': 'goto:file-symbol'
+  # 'ctrl-shift-t': 'goto:project-symbol'
+  # 'ctrl-alt-down': 'goto:declaration'
+  'cmd-left': 'editor:move-to-beginning-of-word'
+  'cmd-right': 'editor:move-to-end-of-word'
+  'cmd-shift-left': 'editor:select-to-beginning-of-word'
+  'cmd-shift-right': 'editor:select-to-end-of-word'
+  'alt-left': 'editor:move-to-first-character-of-line'
+  'alt-right': 'editor:move-to-end-of-screen-line'
+  'alt-shift-left': 'editor:select-to-first-character-of-line'
+  'alt-shift-right': 'editor:select-to-end-of-line'
+  'cmd-backspace': 'editor:delete-to-beginning-of-word'
+  'alt-backspace': 'editor:delete-to-beginning-of-line'
+  'cmd-g': 'go-to-line:toggle'
+  'ctrl-g': 'find-and-replace:find-next'
+  'ctrl-alt-backspace': 'subword-navigation:delete-left'
+  'ctrl-alt-k': 'subword-navigation:delete-right'
+  'cmd-up': 'editor:move-line-up'
+  'cmd-down': 'editor:move-line-down'
+
+# '.platform-darwin .workspace .editor:not(.mini)':
+#   # 'ctrl-alt-p': "window:run-package-specs"
+#   # 'shift-cmd-y': 'ruby-test:test-all'
+#   # 'shift-cmd-r': 'ruby-test:test-file'
+#   # 'shift-cmd-e': 'ruby-test:test-single'
+#   # 'shift-cmd-w': 'ruby-test:test-previous'
+#   # required to override copy path
+#   # 'shift-cmd-c': 'ruby-test:cancel'
+#   # 'shift-cmd-x': 'ruby-test:toggle'
+#   # 'shift-cmd-c': 'core:'
+
+'.workspace .editor.vim-mode.command-mode:not(.insert-mode)':
+  # Word Jumper
+  'q': 'subword-navigation:move-right'
+  # 'q': 'subword-navigation:move-left'
+  'd q': 'subword-navigation:delete-right'
+  'v q': 'subword-navigation:select-right'
+
+# '.platform-linux .workspace .pane.active > .item-views > .editor':
+#   'ctrl-c': 'clipboard-history:copy'
+
+# '.platform-darwin .workspace .pane.active > .item-views > .editor':
+#   'cmd-c': 'clipboard-history:copy'
+
+'.platform-linux .editor':
+  'ctrl-k ctrl-a': 'find-and-replace:select-all'
+
+'.platform-darwin .editor':
+  'cmd-k cmd-a': 'find-and-replace:select-all'

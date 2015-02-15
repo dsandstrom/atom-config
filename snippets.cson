@@ -1,0 +1,84 @@
+'.source.ruby, .source.ruby.rspec':
+  'before (multi-line)':
+    'prefix': 'bef'
+    'body': 'before do\n  $1\nend$0'
+  'before (one-line)':
+    'prefix': 'beff'
+    'body': 'before { $1 }$0'
+  'it (one-line)':
+    'prefix': 'itt'
+    'body': 'it { $1 }$0'
+  'after (one-line)':
+    'prefix': 'aftt'
+    'body': 'after { $1 }$0'
+  'let factory':
+    'prefix': 'letf'
+    'body': 'let(:${2:${1:model}}$3) { create(:${1:model}$4) }$0'
+  'let factory build':
+    'prefix': 'letfb'
+    'body': 'let(:${2:${1:model}}$3) { build(:${1:model}$4) }$0'
+  'let factory !':
+    'prefix': 'letf!'
+    'body': 'let!(:${2:${1:model}}$3) { create(:${1:model}$4) }$0'
+  'factory create':
+    'prefix': 'fgc'
+    'body': 'create(:${1:model})$0'
+  'factory build':
+    'prefix': 'fgb'
+    'body': 'build(:${1:model})$0'
+  'to_yaml':
+    'prefix': 'ty'
+    'body': '.to_yaml'
+  'to_json':
+    'prefix': 'tj'
+    'body': '.to_json'
+  'to_s':
+    'prefix': 'ts'
+    'body': '.to_s'
+'.source.ruby':
+  'flash':
+    'prefix': 'flash'
+    'body': 'flash[:${1:notice}] = "${2:message}"'
+  'flash notice':
+    'prefix': 'fln'
+    'body': 'flash[:notice] = "${2:message}"'
+  'flash alert':
+    'prefix': 'fla'
+    'body': 'flash[:alert] = "${2:message}"'
+  'flash success':
+    'prefix': 'fls'
+    'body': 'flash[:success] = "${2:message}"'
+  'flash info':
+    'prefix': 'fli'
+    'body': 'flash[:info] = "${2:message}"'
+  'flash warning':
+    'prefix': 'flw'
+    'body': 'flash[:warning] = "${2:message}"'
+  'subject':
+    'prefix': 'sub'
+    'body': 'subject { ${1:test_subject} }'
+  'params':
+    'prefix': 'par'
+    'body': 'params[:${1:attr}]$0'
+'.text.html.ruby, .text.html.erb':
+  'else':
+    'prefix': 'else'
+    'body': '<% else %>$0'
+  'elsif':
+    'prefix': 'elsif'
+    'body': '<% elsif $1 %>$0'
+  'erb tags':
+    'prefix': '<'
+    'body': '<%${1:=} $2 %>$0'
+  'erb tags':
+    'prefix': '%'
+    'body': '<%${1:=} $2 %>$0'
+  'debug':
+    'prefix': 'debug'
+    'body': '<%= debug $1 %>$0'
+  'unless':
+    'prefix': 'unless'
+    'body': '<% unless $1 %>$0'
+  'render':
+    'prefix': 'render'
+    'body': '<%= render ${2:\'${1:partial}\'} %>$0'
