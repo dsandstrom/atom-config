@@ -4,7 +4,7 @@
 # '.platform-linux .workspace .pane.active > .item-views > .editor':
 #   'ctrl-c': 'clipboard-history:copy'
 
-'.platform-linux atom-text-editor':
+'.platform-linux atom-workspace':
   'ctrl-{': 'pane:show-previous-item'
   'ctrl-}': 'pane:show-next-item'
 
