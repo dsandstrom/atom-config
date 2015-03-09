@@ -28,13 +28,16 @@
     'body': 'build(:${1:model})$0'
   'to_yaml':
     'prefix': 'ty'
-    'body': '.to_yaml'
+    'body': 'to_yaml'
   'to_json':
     'prefix': 'tj'
-    'body': '.to_json'
+    'body': 'to_json'
   'to_s':
     'prefix': 'ts'
-    'body': '.to_s'
+    'body': 'to_s'
+  'to_i':
+    'prefix': 'ti'
+    'body': 'to_i'
 '.source.ruby':
   'flash':
     'prefix': 'flash'

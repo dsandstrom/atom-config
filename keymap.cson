@@ -4,9 +4,10 @@
 '.platform-linux atom-workspace':
   'ctrl-{': 'pane:show-previous-item'
   'ctrl-}': 'pane:show-next-item'
+  'ctrl-|': 'autohide-tree-view:toggle-enabled'
 
-'.platform-linux atom-text-editor.vim-mode.insert-mode':
-  'ctrl-w': 'core:close'
+# '.platform-linux atom-text-editor.vim-mode.insert-mode':
+#   'ctrl-w': 'core:close'
 '.platform-linux atom-text-editor.vim-mode.command-mode':
   'ctrl-shift-t': 'pane:reopen-closed-item'
 
@@ -30,6 +31,8 @@
   'cmd-h': 'null'
   'cmd-k cmd-[': 'window:focus-pane-on-left'
   'cmd-k cmd-]': 'window:focus-pane-on-right'
+  'cmd-w': 'null'
+  'cmd-|': 'autohide-tree-view:toggle-enabled'
 
 '.platform-linux atom-workspace atom-text-editor':
   'ctrl-space': 'non-navigation:move-right'
