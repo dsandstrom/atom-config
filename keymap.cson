@@ -1,9 +1,6 @@
 '.workspace':
   'f12': 'window:toggle-dev-tools'
 
-# '.platform-linux .workspace .pane.active > .item-views > .editor':
-#   'ctrl-c': 'clipboard-history:copy'
-
 '.platform-linux atom-workspace':
   'ctrl-{': 'pane:show-previous-item'
   'ctrl-}': 'pane:show-next-item'
@@ -29,18 +26,12 @@
   'cmd--': 'native!'
   'cmd-_': 'native!'
   'cmd-q': 'maybs-quit:toggle'
-  # 'cmd'
   # 'cmd-s': 'custom:save'
   'cmd-h': 'null'
   'cmd-k cmd-[': 'window:focus-pane-on-left'
   'cmd-k cmd-]': 'window:focus-pane-on-right'
 
 '.platform-linux .workspace .editor':
-  # Word Jumper
-  # 'alt-right': 'word-jumper:move-right'
-  # 'alt-left': 'word-jumper:move-left'
-  # 'alt-shift-right': 'word-jumper:select-right'
-  # 'alt-shift-left': 'word-jumper:select-left'
   'ctrl-space': 'non-navigation:move-right'
   # Basic
   'ctrl-alt-t': 'editor:transpose'
@@ -49,16 +40,10 @@
   # 'ctrl-r': 'goto:file-symbol'
   # 'ctrl-shift-t': 'goto:project-symbol'
   # 'ctrl-alt-down': 'goto:declaration'
-  # 'cmd-"': 'toggle-quotes:toggle'
+  'alt-k': 'subword-navigation:delete-right'
 
 '.platform-darwin .workspace .editor':
-  # Word Jumper
-  # 'alt-right': 'word-jumper:move-right'
-  # 'alt-left': 'word-jumper:move-left'
-  # 'alt-shift-right': 'word-jumper:select-right'
-  # 'alt-shift-left': 'word-jumper:select-left'
   'cmd-space': 'non-navigation:move-right'
-  # 'cmd-space': 'editor:move-to-end-of-word'
   # Basic
   # Duplicate and Comment
   # 'ctrl-cmd-/': 'duplicate-and-comment:duplicateAndComment'
@@ -77,7 +62,6 @@
   'alt-backspace': 'editor:delete-to-beginning-of-line'
   'cmd-g': 'go-to-line:toggle'
   'ctrl-g': 'find-and-replace:find-next'
-  'ctrl-alt-backspace': 'subword-navigation:delete-left'
   'ctrl-alt-k': 'subword-navigation:delete-right'
   'cmd-up': 'editor:move-line-up'
   'cmd-down': 'editor:move-line-down'
@@ -92,13 +76,6 @@
 #   # 'shift-cmd-c': 'ruby-test:cancel'
 #   # 'shift-cmd-x': 'ruby-test:toggle'
 #   # 'shift-cmd-c': 'core:'
-
-'.workspace .editor.vim-mode.command-mode:not(.insert-mode)':
-  # Word Jumper
-  'q': 'subword-navigation:move-right'
-  # 'q': 'subword-navigation:move-left'
-  'd q': 'subword-navigation:delete-right'
-  'v q': 'subword-navigation:select-right'
 
 # '.platform-linux .workspace .pane.active > .item-views > .editor':
 #   'ctrl-c': 'clipboard-history:copy'
