@@ -33,6 +33,8 @@
   'cmd-k cmd-]': 'window:focus-pane-on-right'
   'cmd-w': 'null'
   'cmd-|': 'autohide-tree-view:toggle-enabled'
+  'cmd-w cmd-q': 'core:close'
+  'cmd-w q': 'core:close'
 
 '.platform-linux atom-workspace atom-text-editor':
   'ctrl-space': 'non-navigation:move-right'
