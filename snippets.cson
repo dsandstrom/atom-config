@@ -1,4 +1,4 @@
-'.source.ruby, .source.ruby.rspec':
+'.source.ruby.rspec':
   'before (multi-line)':
     'prefix': 'bef'
     'body': 'before do\n  $1\nend$0'
@@ -26,6 +26,48 @@
   'factory build':
     'prefix': 'fgb'
     'body': 'build(:${1:model})$0'
+  'subject':
+    'prefix': 'sub'
+    'body': 'subject { ${1:test_subject} }$0'
+  'describe (String)':
+    'prefix': 'des'
+    'body': "describe \"${1:subject}\" do\n  $0\nend$0"
+  'context':
+    'prefix': 'con'
+    'body': "context \"${1:context}\" do\n  $0\nend$0"
+  'it (does something)':
+    'prefix': 'it'
+    'body': "it \"${1:does something}\"${2: do\n  $0\nend}$0"
+  'expect':
+    'prefix': 'exp'
+    'body': 'expect(${1:subject}).to${2:_not} ${3:${4:eq} ${5:object}}$0'
+  'expect with block':
+    'prefix': 'expb'
+    'body': '''
+      expect do
+        ${1:target}
+      end.to${2:_not} ${3:raise_error}$0
+    '''
+  'expect with block to change':
+    'prefix': 'expbc'
+    'body': '''
+      expect do
+        ${1:target}
+      end.to${2:_not} change(${3:object}, ${4:method})${5:.by(${6})}$0
+    '''
+  'expect response to redirect':
+    'prefix': 'exprr'
+    'body': 'expect(response).to redirect_to ${2:${1:root}_path}$0'
+  'expect response to render template':
+    'prefix': 'exprt'
+    'body': 'expect(response).to render_template :${1:index}$0'
+  'allow to receive':
+    'prefix': 'atr'
+    'body': '''
+      allow(${1:object}).to receive(:${2:method})${4:.and_return(${3:value})}$0
+    '''
+
+'.source.ruby, .source.ruby.rspec':
   'to_yaml':
     'prefix': 'ty'
     'body': 'to_yaml'
@@ -38,6 +80,16 @@
   'to_i':
     'prefix': 'ti'
     'body': 'to_i'
+  'to_datetime':
+    'prefix': 'tdt'
+    'body': 'to_datetime'
+  'to_date':
+    'prefix': 'td'
+    'body': 'to_date'
+  'to_time':
+    'prefix': 'tt'
+    'body': 'to_time'
+
 '.source.ruby':
   'flash':
     'prefix': 'flash'
@@ -57,12 +109,10 @@
   'flash warning':
     'prefix': 'flw'
     'body': 'flash[:warning] = "${2:message}"'
-  'subject':
-    'prefix': 'sub'
-    'body': 'subject { ${1:test_subject} }'
   'params':
     'prefix': 'par'
     'body': 'params[:${1:attr}]$0'
+
 '.text.html.ruby, .text.html.erb':
   'else':
     'prefix': 'else'
@@ -73,9 +123,12 @@
   'erb tags':
     'prefix': '<'
     'body': '<%${1:=} $2 %>$0'
-  'erb tags':
+  'erb tags (invisible)':
     'prefix': '%'
-    'body': '<%${1:=} $2 %>$0'
+    'body': '<% $1 %>$0'
+  'erb tags (visible)':
+    'prefix': '='
+    'body': '<%= $1 %>$0'
   'debug':
     'prefix': 'debug'
     'body': '<%= debug $1 %>$0'
