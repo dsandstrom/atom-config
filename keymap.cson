@@ -119,3 +119,5 @@
   'cmd-w c': 'pane:close'
   'cmd-w cmd-q': 'core:close'
   'cmd-w q': 'core:close'
+  'shift-enter': 'add-line-break:add-line-break-before'
+  'enter': 'add-line-break:add-line-break-after'
