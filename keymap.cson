@@ -82,8 +82,10 @@
 #   # 'shift-cmd-x': 'ruby-test:toggle'
 #   # 'shift-cmd-c': 'core:'
 
-# '.platform-linux atom-workspace .pane.active > .item-views > atom-text-editor':
-#   'ctrl-c': 'clipboard-history:copy'
+'.platform-linux atom-workspace .pane.active > .item-views > atom-text-editor':
+  # 'ctrl-c': 'clipboard-history:copy'
+  'ctrl-c': 'core:copy'
+  'ctrl-v': 'core:paste'
 
 # '.platform-darwin atom-workspace .pane.active > .item-views > atom-text-editor':
 #   'cmd-c': 'clipboard-history:copy'
