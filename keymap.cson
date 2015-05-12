@@ -121,5 +121,7 @@
   'cmd-w c': 'pane:close'
   'cmd-w cmd-q': 'core:close'
   'cmd-w q': 'core:close'
+
+'atom-text-editor.vim-mode:not(.insert-mode)':
   'shift-enter': 'add-line-break:add-line-break-before'
   'enter': 'add-line-break:add-line-break-after'
