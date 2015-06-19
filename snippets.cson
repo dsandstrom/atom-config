@@ -114,12 +114,38 @@
     'body': 'params[:${1:attr}]$0'
 
 '.text.html.ruby, .text.html.erb':
-  'else':
-    'prefix': 'else'
-    'body': '<% else %>$0'
-  'elsif':
-    'prefix': 'elsif'
-    'body': '<% elsif $1 %>$0'
+  "if block":
+    prefix: "if"
+    body: """
+      <% if ${1:condition} %>
+        ${2:true-block}
+      <% end %>$0
+    """
+  "if/else block":
+    prefix: "ife"
+    body: """
+      <% if ${1:condition} %>
+        ${2:true-block}
+      <% else %>
+        ${3:false-block}
+      <% end %>$0
+    """
+  "else tag":
+    prefix: "else"
+    body: "<% else %>$0"
+  "elsif tag":
+    prefix: "elsif"
+    body: "<% elsif ${1:condition} %>$0"
+  "unless block":
+    prefix: "unless"
+    body: """
+      <% unless ${1:condition} %>
+        ${2:false-block}
+      <% end %>$0
+    """
+  "end tag":
+    prefix: "end"
+    body: "<% end %>$0"
   'erb tags':
     'prefix': '<'
     'body': '<%${1:=} $2 %>$0'
@@ -132,9 +158,78 @@
   'debug':
     'prefix': 'debug'
     'body': '<%= debug $1 %>$0'
-  'unless':
-    'prefix': 'unless'
-    'body': '<% unless $1 %>$0'
   'render':
     'prefix': 'render'
     'body': '<%= render ${2:\'${1:partial}\'} %>$0'
+
+'.text.html.php':
+  'php visible tag':
+    'prefix': '='
+    'body': '<?= $1 ?>$0'
+  'php hidden tag':
+    'prefix': '?'
+    'body': '<? $1 ?>$0'
+  'site variable':
+    'prefix': 'site'
+    'body': "<?= $site->content('${1:variable}') ?>$0"
+  'page variable':
+    'prefix': 'page'
+    'body': "<?= $page->content('${1:variable}') ?>$0"
+  'helper method':
+    'prefix': 'h'
+    'body': "<?= $h->${1:function}(${2:$${3:variable}}$4) ?>$0"
+  'TODO comment':
+    'prefix': 'todo'
+    'body': '<?php // TODO: $1 ?>$0'
+  'FIXME comment':
+    'prefix': 'fix'
+    'body': '<?php // FIXME: $1 ?>$0'
+
+'.source.php':
+  'TODO comment':
+    'prefix': 'todo'
+    'body': '// TODO: $1'
+  'FIXME comment':
+    'prefix': 'fix'
+    'body': '// FIXME: $1'
+
+'.source.scss':
+  '@media':
+    prefix: 'med'
+    body: '@media $1 {\n  $2\n}$0'
+  '@media #{$size}':
+    prefix: 'med$'
+    body: '@media #{$${1:size}} {\n  $2\n}$0'
+  '@media #{$small-only}':
+    prefix: 'medso'
+    body: '@media #{$small-only} {\n  $1\n}$0'
+  '@media #{$medium-only}':
+    prefix: 'medmo'
+    body: '@media #{$medium-only} {\n  $1\n}$0'
+  '@media #{$large-only}':
+    prefix: 'medlo'
+    body: '@media #{$large-only} {\n  $1\n}$0'
+  '@media #{$medium-up}':
+    prefix: 'medmu'
+    body: '@media #{$medium-up} {\n  $1\n}$0'
+  '@media #{$large-up}':
+    prefix: 'medlu'
+    body: '@media #{$large-up} {\n  $1\n}$0'
+  'box':
+    'prefix': 'box'
+    'body': """
+      position: absolute;
+      top: ${1:0};
+      right: ${2:0};
+      bottom: ${3:0};
+      left: ${4:0};$0
+    """
+  'display: flex':
+    'prefix': 'disf'
+    'body': 'display: flex;'
+  'content':
+    'prefix': 'con'
+    'body': "content: ${1:'$2'};$0"
+  'left (alt)':
+    'prefix': 'lef'
+    'body': 'left: ${1:0};$0'

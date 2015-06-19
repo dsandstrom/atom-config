@@ -12,8 +12,27 @@ atom-workspace {
   }
 }
 
-pigments-color-maker {
-  .dot {
-    border-radius: 4px;
-  }
+atom-text-editor::shadow pigments-markers::shadow pigments-color-marker.dot.square,
+pigments-markers::shadow pigments-color-marker.dot.square,
+pigments-color-marker.dot.square {
+  border-radius: 4px;
+  width: .8em;
+  height: .8em;
+  vertical-align: middle;
+  margin-top: .3em;
 }
+
+
+// Adds shadow to the right of Gutter
+// .tab-bar, atom-panel-container.bottom{
+//   z-index: 2;
+// }
+// atom-text-editor::shadow{
+//   .gutter{
+//     z-index: 1;
+//     box-shadow: 0.5rem 0 2rem hsl(0, 0%, 5%);
+//   }
+//   .scroll-view{
+//     padding-left: 0.5rem;
+//   }
+// }
