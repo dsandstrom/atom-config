@@ -75,7 +75,7 @@
 #   # 'shift-cmd-x': 'ruby-test:toggle'
 #   # 'shift-cmd-c': 'core:'
 
-'.platform-linux body atom-pane.active > .item-views > atom-text-editor':
+'.platform-linux atom-workspace atom-pane.active > .item-views > atom-text-editor':
   # 'ctrl-c': 'clipboard-history:copy'
   'ctrl-c': 'core:copy'
   'ctrl-v': 'core:paste'
@@ -141,6 +141,17 @@
 '.platform-linux atom-text-editor:not([mini])':
   'ctrl-shift-v': 'clipboard-plus:toggle'
 
-'body atom-text-editor.vim-mode:not(.insert-mode)':
+'.platform-linux atom-text-editor.vim-mode:not(.insert-mode)':
+  'ctrl-d': 'find-and-replace:select-next'
+  'ctrl-u': 'find-and-replace:select-undo'
+
+'atom-text-editor.vim-mode:not(.insert-mode)':
   'shift-enter': 'add-line-break:add-line-break-before'
   'enter':       'add-line-break:add-line-break-after'
+  'enter': 'add-line-break:add-line-break-after'
+  'q': 'editor:move-to-next-subword-boundary'
+  'Q': 'editor:move-to-previous-subword-boundary'
+  'v q': 'editor:select-to-next-subword-boundary'
+  'v Q': 'editor:select-to-previous-subword-boundary'
+  'd q': 'editor:delete-to-end-of-subword'
+  'd Q': 'editor:delete-to-beginning-of-subword'
