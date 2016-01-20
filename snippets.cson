@@ -112,6 +112,9 @@
   'params':
     'prefix': 'par'
     'body': 'params[:${1:attr}]$0'
+  'rubocop:disable':
+    'prefix': 'rd'
+    'body': '# rubocop:disable $0'
 
 '.text.html.ruby, .text.html.erb':
   "if block":
@@ -161,37 +164,94 @@
   'render':
     'prefix': 'render'
     'body': '<%= render ${2:\'${1:partial}\'} %>$0'
+  'link_to':
+    'prefix': 'lt'
+    'body': "<%= link_to ${2:'${1:text}'}, ${3:path} %>$0"
+  'link_to new':
+    'prefix': 'ltn'
+    'body': """
+      <%= link_to ${2:'${1:New}'}, new_${3:widget}_path %>$0
+    """
+  'link_to edit':
+    'prefix': 'lte'
+    'body': """
+      <%= link_to ${2:'${1:Edit}'}, edit_${3:widget}_path(${4:@}${3:widget}) %>$0
+    """
+  'link_to destroy':
+    'prefix': 'ltd'
+    'body': """
+      <%=
+        link_to ${2:'${1:Delete}'},
+                ${4:@${3:widget}},
+                method: :delete,
+                data: { confirm: '${5:Are you sure?}' }
+      %>$0
+    """
 
 '.text.html.php':
   'php visible tag':
     'prefix': '='
-    'body': '<?= $1 ?>$0'
+    'body': '<?= $1 ?>'
   'php hidden tag':
     'prefix': '?'
-    'body': '<? $1 ?>$0'
+    'body': '<? $1 ?>'
   'site variable':
     'prefix': 'site'
-    'body': "<?= $site->content('${1:variable}') ?>$0"
+    'body': "<?= $site->${1:content}('${2:variable}') ?>"
+  'site content variable':
+    'prefix': 'con'
+    'body': "<?= $site->content('${1:variable}') ?>"
+  'bind_attr variable':
+    'prefix': 'bind'
+    'body': "<?= $${1:page}->bind_attr('${2:variable}') ?>"
   'page variable':
     'prefix': 'page'
-    'body': "<?= $page->content('${1:variable}') ?>$0"
+    'body': "<?= $page->${1:content}('${2:variable}') ?>"
+  'page fragment variable':
+    'prefix': 'frag'
+    'body': "<?= $page->fragment('${1:variable}', $index) ?>"
   'helper method':
     'prefix': 'h'
-    'body': "<?= $h->${1:function}(${2:$${3:variable}}$4) ?>$0"
-  'TODO comment':
-    'prefix': 'todo'
-    'body': '<?php // TODO: $1 ?>$0'
-  'FIXME comment':
-    'prefix': 'fix'
-    'body': '<?php // FIXME: $1 ?>$0'
+    'body': "<?= $h->${1:function}(${2:$${3:variable}}$4) ?>"
+  'render helper method':
+    'prefix': 'ren'
+    'body': "<?= $h->render('${1:partial}') ?>"
 
 '.source.php':
-  'TODO comment':
-    'prefix': 'todo'
-    'body': '// TODO: $1'
-  'FIXME comment':
-    'prefix': 'fix'
-    'body': '// FIXME: $1'
+  'function':
+    'prefix': 'fun'
+    'body': """
+      function ${1:function_name}(${2:$${3:variable}}$4) {
+        $5
+      }$0
+    """
+  'site variable':
+    'prefix': 'site'
+    'body': "$site->${1:content}('${2:variable}')$0"
+  'site content variable':
+    'prefix': 'con'
+    'body': "$site->content('${1:variable}')$0"
+  'site bind_attr variable':
+    'prefix': 'bind'
+    'body': "$site->bind_attr('${1:variable}')$0"
+  'page variable':
+    'prefix': 'page'
+    'body': "$page->content('${1:variable}')$0"
+  'page fragment variable':
+    'prefix': 'frag'
+    'body': "$page->fragment('${1:variable}', $index)"
+  'helper method':
+    'prefix': 'h'
+    'body': "$h->${1:function}(${2:$${3:variable}}$4)$0"
+  'render method':
+    'prefix': 'ren'
+    'body': "$h->render('${1:partial}')$0"
+  'echo':
+    'prefix': 'echo'
+    'body': 'echo ${1:"${2:string}"};$0'
+  'arrow':
+    'prefix': '-'
+    'body': '->'
 
 '.source.scss':
   '@media':
@@ -218,18 +278,72 @@
   'box':
     'prefix': 'box'
     'body': """
-      position: absolute;
-      top: ${1:0};
-      right: ${2:0};
-      bottom: ${3:0};
-      left: ${4:0};$0
+      position: ${1:absolute};
+      top: ${2:0};
+      right: ${3:0};
+      bottom: ${4:0};
+      left: ${5:0};
+      content: '';$0
     """
+  'margin: 0 auto':
+    'prefix': 'mara'
+    'body': 'margin: 0 auto;'
   'display: flex':
     'prefix': 'disf'
     'body': 'display: flex;'
+  'flex':
+    'prefix': 'flex'
+    'body': 'flex: ${1:1};'
+  'flex (alt)':
+    'prefix': 'fle'
+    'body': 'flex: ${1:1};'
+  'justify-content':
+    'prefix': 'jc'
+    'body': 'justify-content: ${1:center};'
+  'align-items':
+    'prefix': 'ai'
+    'body': 'align-items: ${1:center};'
   'content':
     'prefix': 'con'
     'body': "content: ${1:'$2'};$0"
   'left (alt)':
     'prefix': 'lef'
     'body': 'left: ${1:0};$0'
+  'headings':
+    'prefix': 'hx'
+    'body': """
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        $0
+      }
+    """
+  'rem-calc':
+    'prefix': 'rc'
+    'body': 'rem-calc($1)'
+  'Sass Linter Disable':
+    'prefix': 'sld'
+    'body': '// scss-lint:disable $0'
+  '@import':
+    'prefix': 'imp'
+    'body': "@import '${1:filename}';"
+  '@include':
+    'prefix': 'inc'
+    'body': '@include ${1:mixin};'
+  '@mixin':
+    'prefix': 'mix'
+    'body': '@mixin ${1:name} {\n  $2\n}'
+
+'.source.js':
+  'variable (with assignment)':
+    'prefix': 'var'
+    'body': 'var ${1:name} = ${2:value};'
+  'variable':
+    'prefix': 'v'
+    'body': 'var ${1:name};$0'
+  'variable (with function)':
+    'prefix': 'varf'
+    'body': 'var ${1:name} = function (${2:argument}) {\n  $3\n};'

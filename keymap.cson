@@ -1,5 +1,6 @@
 'body':
   'f12': 'window:toggle-dev-tools'
+  'cmd-shift-n': 'advanced-open-file:toggle'
 
 '.platform-linux body':
   'ctrl-{': 'pane:show-previous-item'
@@ -10,6 +11,9 @@
 #   'ctrl-w': 'core:close'
 '.platform-linux atom-text-editor.vim-mode.command-mode':
   'ctrl-shift-t': 'pane:reopen-closed-item'
+
+# 'atom-text-editor':
+#   'cmd-shift-u': 'user:paste-below'
 
 # Ruby Test
 # '.platform-linux body':
@@ -22,22 +26,20 @@
 
 '.platform-darwin body':
   # 'f12': 'window:toggle-dev-tools'
-  'cmd-=': 'native!'
-  'cmd-+': 'native!'
-  'cmd--': 'native!'
-  'cmd-_': 'native!'
-  'cmd-q': 'maybs-quit:toggle'
-  # 'cmd-s': 'custom:save'
-  'cmd-h': 'null'
+  'cmd-=':       'native!'
+  'cmd-+':       'native!'
+  'cmd--':       'native!'
+  'cmd-_':       'native!'
+  'cmd-q':       'maybs-quit:toggle'
+  'cmd-h':       'null'
   'cmd-k cmd-[': 'window:focus-pane-on-left'
   'cmd-k cmd-]': 'window:focus-pane-on-right'
-  'cmd-w': 'null'
-  'cmd-|': 'autohide-tree-view:toggle-enabled'
+  'cmd-w':       'null'
+  'cmd-|':       'autohide-tree-view:toggle-enabled'
   'cmd-w cmd-q': 'core:close'
-  'cmd-w q': 'core:close'
+  'cmd-w q':     'core:close'
 
 '.platform-linux body atom-text-editor':
-  'ctrl-space': 'non-navigation:move-right'
   # Basic
   'ctrl-alt-t': 'editor:transpose'
   # Duplicate and Comment
@@ -48,28 +50,19 @@
   'alt-k': 'subword-navigation:delete-right'
 
 '.platform-darwin body atom-text-editor':
-  'cmd-space': 'non-navigation:move-right'
-  # Basic
-  # Duplicate and Comment
-  # 'ctrl-cmd-/': 'duplicate-and-comment:duplicateAndComment'
-  # 'ctrl-r': 'goto:file-symbol'
-  # 'ctrl-shift-t': 'goto:project-symbol'
-  # 'ctrl-alt-down': 'goto:declaration'
-  'cmd-left': 'editor:move-to-beginning-of-word'
-  'cmd-right': 'editor:move-to-end-of-word'
-  'cmd-shift-left': 'editor:select-to-beginning-of-word'
+  'cmd-left':        'editor:move-to-beginning-of-word'
+  'cmd-right':       'editor:move-to-end-of-word'
+  'cmd-shift-left':  'editor:select-to-beginning-of-word'
   'cmd-shift-right': 'editor:select-to-end-of-word'
-  'alt-left': 'editor:move-to-first-character-of-line'
-  'alt-right': 'editor:move-to-end-of-screen-line'
-  'alt-shift-left': 'editor:select-to-first-character-of-line'
+  'alt-left':        'editor:move-to-first-character-of-line'
+  'alt-right':       'editor:move-to-end-of-screen-line'
+  'alt-shift-left':  'editor:select-to-first-character-of-line'
   'alt-shift-right': 'editor:select-to-end-of-line'
-  'cmd-backspace': 'editor:delete-to-beginning-of-word'
-  'alt-backspace': 'editor:delete-to-beginning-of-line'
-  'cmd-g': 'go-to-line:toggle'
-  'ctrl-g': 'find-and-replace:find-next'
-  'ctrl-alt-k': 'subword-navigation:delete-right'
-  'cmd-up': 'editor:move-line-up'
-  # 'cmd-down': 'editor:move-line-down'
+  'cmd-backspace':   'editor:delete-to-beginning-of-word'
+  'alt-backspace':   'editor:delete-to-beginning-of-line'
+  'cmd-g':           'go-to-line:toggle'
+  'ctrl-g':          'find-and-replace:find-next'
+  'ctrl-alt-k':      'subword-navigation:delete-right'
 
 # '.platform-darwin body atom-text-editor:not(.mini)':
 #   # 'ctrl-alt-p': "window:run-package-specs"
@@ -92,6 +85,7 @@
 
 '.platform-linux atom-text-editor':
   'ctrl-k ctrl-a': 'find-and-replace:select-all'
+  'ctrl-space':    'non-navigation:move-right'
 
 '.platform-darwin atom-text-editor':
   'cmd-k cmd-a':    'find-and-replace:select-all'
@@ -102,6 +96,8 @@
   'ctrl-j':         'core:move-down'
   'ctrl-h':         'core:move-left'
   'ctrl-l':         'core:move-right'
+  'cmd-space':      'non-navigation:move-right'
+  # 'cmd-s':          'seq:vim-save'
 
 '.platform-darwin atom-text-editor.vim-mode:not(.insert-mode)':
   'cmd-w cmd-h': 'vim-mode:focus-pane-view-on-left'
@@ -129,6 +125,12 @@
   'cmd-w cmd-q': 'core:close'
   'cmd-w q':     'core:close'
   'ctrl-p':      'clipboard-plus:toggle'
+  'q': 'editor:move-to-next-subword-boundary'
+  'Q': 'editor:move-to-previous-subword-boundary'
+  'v q': 'editor:select-to-next-subword-boundary'
+  'v Q': 'editor:select-to-previous-subword-boundary'
+  'd q': 'editor:delete-to-end-of-subword'
+  'd Q': 'editor:delete-to-beginning-of-subword'
 
 '.platform-linux atom-text-editor.vim-mode:not(.insert-mode)':
   'ctrl-p': 'clipboard-plus:toggle'
@@ -141,4 +143,4 @@
 
 'body atom-text-editor.vim-mode:not(.insert-mode)':
   'shift-enter': 'add-line-break:add-line-break-before'
-  'enter': 'add-line-break:add-line-break-after'
+  'enter':       'add-line-break:add-line-break-after'
