@@ -1,25 +1,56 @@
-.platform-darwin {
-  .overlay {
-    &.from-top {
-      margin-left: -440px;
-    }
-  }
+// @import "syntax-variables";
+// @import "ui-variables";
+
+// .platform-darwin {
+//   .overlay {
+//     &.from-top {
+//       margin-left: -440px;
+//     }
+//   }
+// }
+
+// https://medium.com/@tgaeta/atom-font-rendering-fix-and-theme-suggestion-9a57b7bbf6a5
+// atom-text-editor::shadow {
+//   -webkit-font-smoothing: auto;
+// }
+//
+// .tree-view {
+//   -webkit-font-smoothing: auto;
+// }
+
+status-bar {
+  text-transform: lowercase;
 }
 
-atom-workspace {
-  .tree-view-resizer {
-    padding-left: 0;
-  }
-}
+// atom-workspace {
+//   .tree-view-resizer {
+//     padding-left: 0;
+//   }
+// }
 
+// rounds out pigments' square dot
 atom-text-editor::shadow pigments-markers::shadow pigments-color-marker.dot.square,
 pigments-markers::shadow pigments-color-marker.dot.square,
 pigments-color-marker.dot.square {
-  border-radius: 4px;
+  border-radius: .15em;
   width: .8em;
   height: .8em;
-  vertical-align: middle;
-  margin-top: .3em;
+}
+
+// hides linters' checkmark, encoding selector
+atom-panel.bottom {
+  encoding-selector-status,
+  [is=status-bar-launch-mode],
+  linter-bottom-status {
+    display: none;
+  }
+}
+
+// Makes the cursor pulse instead of blink
+atom-text-editor::shadow {
+  .cursor {
+    transition: opacity 1.6s;
+  }
 }
 
 // atom-text-editor::shadow {
@@ -38,4 +69,10 @@ pigments-color-marker.dot.square {
 //   .scroll-view{
 //     padding-left: 0.5rem;
 //   }
+// }
+
+// atom-text-editor::shadow .absolute {
+//   display: inline;
+//   opacity: 0.5;
+//   padding-right: 1em;
 // }
