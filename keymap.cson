@@ -153,7 +153,6 @@
 
 'atom-text-editor.vim-mode:not(.insert-mode)':
   'shift-enter': 'add-line-break:add-line-break-before'
-  'enter':       'add-line-break:add-line-break-after'
   'enter': 'add-line-break:add-line-break-after'
   'q': 'editor:move-to-next-subword-boundary'
   'Q': 'editor:move-to-previous-subword-boundary'
@@ -161,3 +160,5 @@
   'v Q': 'editor:select-to-previous-subword-boundary'
   'd q': 'editor:delete-to-end-of-subword'
   'd Q': 'editor:delete-to-beginning-of-subword'
+  'space w': 'core:save'
+  'space': 'unset!'
