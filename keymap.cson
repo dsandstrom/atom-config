@@ -1,10 +1,11 @@
 'body':
   'f12': 'window:toggle-dev-tools'
 
-'.platform-linux body':
+'.platform-linux atom-workspace':
   'ctrl-{': 'pane:show-previous-item'
   'ctrl-}': 'pane:show-next-item'
   'ctrl-|': 'autohide-tree-view:toggle-enabled'
+  'ctrl-N': 'advanced-open-file:toggle'
 
 # '.platform-linux atom-text-editor.vim-mode.insert-mode':
 #   'ctrl-w': 'core:close'
@@ -20,7 +21,7 @@
 #   'ctrl-=': 'native!'
 #   'ctrl--': 'native!'
 
-'.platform-darwin body':
+'.platform-darwin atom-workspace':
   # 'f12': 'window:toggle-dev-tools'
   'cmd-=': 'native!'
   'cmd-+': 'native!'
@@ -36,7 +37,7 @@
   'cmd-w cmd-q': 'core:close'
   'cmd-w q': 'core:close'
 
-'.platform-linux body atom-text-editor':
+'.platform-linux atom-workspace atom-text-editor':
   'ctrl-space': 'non-navigation:move-right'
   # Basic
   'ctrl-alt-t': 'editor:transpose'
@@ -92,6 +93,10 @@
 
 '.platform-linux atom-text-editor':
   'ctrl-k ctrl-a': 'find-and-replace:select-all'
+  'ctrl-k':        'core:move-up'
+  'ctrl-j':        'core:move-down'
+  'ctrl-h':        'core:move-left'
+  'ctrl-l':        'core:move-right'
 
 '.platform-darwin atom-text-editor':
   'cmd-k cmd-a':    'find-and-replace:select-all'
@@ -131,7 +136,7 @@
   'ctrl-p':      'clipboard-plus:toggle'
 
 '.platform-linux atom-text-editor.vim-mode:not(.insert-mode)':
-  'ctrl-p': 'clipboard-plus:toggle'
+  'cmd-p': 'clipboard-plus:toggle'
 
 '.platform-darwin atom-text-editor:not([mini])':
   'cmd-shift-v': 'clipboard-plus:toggle'

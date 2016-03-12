@@ -7,7 +7,10 @@
     'body': 'before { $1 }$0'
   'it (one-line)':
     'prefix': 'itt'
-    'body': 'it { $1 }$0'
+    'body': 'it { $1 }'
+  'it (one-line)':
+    'prefix': 'ite'
+    'body': 'it { expect(${1:subject}$2).to${3:_not} ${4:${5:eq} ${6:object}}$0 }'
   'after (one-line)':
     'prefix': 'aftt'
     'body': 'after { $1 }$0'
