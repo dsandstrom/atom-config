@@ -2,6 +2,9 @@
   'f12': 'window:toggle-dev-tools'
   'cmd-shift-n': 'advanced-open-file:toggle'
 
+'atom-text-editor':
+  'shift-space': 'custom:add-space-after'
+
 '.platform-linux atom-workspace':
   'ctrl-{': 'pane:show-previous-item'
   'ctrl-}': 'pane:show-next-item'
