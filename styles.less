@@ -76,3 +76,34 @@ atom-text-editor::shadow {
 //   opacity: 0.5;
 //   padding-right: 1em;
 // }
+
+// atom-text-editor .gutter .line-number.cursor-line,
+// :host .gutter .line-number.cursor-line {
+//   background-color: transparent !important;
+// }
+//
+// :host(.is-focused) .line-number.cursor-line-no-selection {
+//   background-color: transparent !important;
+// }
+
+
+// fixes current line highlight
+// by moving linter gutter on top of number gutter
+atom-text-editor::shadow .gutter-container {
+  position: relative;
+}
+
+atom-text-editor::shadow .gutter {
+  position: relative;
+  z-index: 1;
+}
+
+atom-text-editor::shadow .gutter[gutter-name="linter"] {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+
+  .custom-decorations {
+    background-color: transparent !important;
+  }
+}
