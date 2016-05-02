@@ -43,7 +43,7 @@
     'body': "it \"${1:does something}\"${2: do\n  $0\nend}$0"
   'expect':
     'prefix': 'exp'
-    'body': 'expect(${1:subject}).to${2:_not} ${3:${4:eq} ${5:object}}$0'
+    'body': 'expect(${1:subject}).to${2:_not} ${3:${4:eq}(${5:object})}$0'
   'expect with block':
     'prefix': 'expb'
     'body': '''
