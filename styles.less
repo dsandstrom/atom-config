@@ -1,5 +1,5 @@
 // @import "syntax-variables";
-// @import "ui-variables";
+@import "ui-variables";
 
 // .platform-darwin {
 //   .overlay {
@@ -32,19 +32,20 @@ status-bar {
 atom-text-editor::shadow pigments-markers::shadow pigments-color-marker.dot.square,
 pigments-markers::shadow pigments-color-marker.dot.square,
 pigments-color-marker.dot.square {
-  border-radius: .15em;
+  border-radius: .2em;
   width: .8em;
   height: .8em;
+  // margin-left: 13px;
 }
 
+
 // hides linters' checkmark, encoding selector
-atom-panel.bottom {
-  encoding-selector-status,
-  [is=status-bar-launch-mode],
-  linter-bottom-status {
-    display: none;
-  }
-}
+// atom-panel.bottom {
+//   encoding-selector-status,
+//   [is=status-bar-launch-mode] {
+//     display: none;
+//   }
+// }
 
 // Makes the cursor pulse instead of blink
 atom-text-editor::shadow {
@@ -93,14 +94,11 @@ atom-text-editor::shadow .gutter-container {
   position: relative;
 }
 
-atom-text-editor::shadow .gutter {
-  position: relative;
-  z-index: 1;
-}
-
 atom-text-editor::shadow .gutter[gutter-name="linter"] {
   position: absolute;
   right: 0;
+  bottom: 0;
+  top: 0;
   background-color: transparent;
 
   .custom-decorations {
@@ -115,5 +113,68 @@ atom-text-editor::shadow .gutter[gutter-name="linter"] {
   .terminal-cursor {
     background: transparent;
     border-bottom: 1px solid #aaa;
+  }
+}
+
+atom-text-editor::shadow .relative.current-line {
+  color: #797979;
+}
+
+.tab-bar {
+  padding-top: 4px;
+  height: auto;
+
+  .tab {
+    height: auto;
+    border-bottom-width: 0;
+
+    &.modifed {
+      border-top: 2px solid #c45330;
+    }
+  }
+}
+
+// titlebar
+
+// @title-bar-text-size: 13px;
+// @title-bar-height: 23px;
+@title-bar-background-color: @tree-view-background-color;
+// @title-bar-border-color: @title-bar-background-color;
+// @title-color: @text-color-subtle;
+
+// body.fullscreen .title-bar {
+//   margin-top: -@title-bar-height;
+// }
+
+.title-bar {
+  // height: @title-bar-height;
+  // transition: margin-top 160ms;dfs
+
+  // flex-shrink: 0;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+
+  // font-size: @title-bar-text-size;
+  // -webkit-user-select: none;
+  // -webkit-app-region: drag;
+
+  // padding: 0 70px;
+  // overflow: hidden;
+  color: @text-color-subtle;
+
+  // .title {
+  //   flex: 0 1 auto;
+  //   overflow: hidden;
+  //   white-space: nowrap;
+  //   text-overflow: ellipsis;
+  // }
+
+  background-color: @title-bar-background-color;
+  // border-bottom: 1px solid @title-bar-border-color;
+  border-width: 0;
+
+  .is-blurred & {
+    color: @text-color-faded;
   }
 }
