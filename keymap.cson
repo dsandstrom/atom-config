@@ -159,3 +159,9 @@
   # 'd ]': 'editor:delete-to-beginning-of-subword'
   'space w': 'core:save'
   'space': 'unset!'
+  'r f': 'rspec-focus:add'
+  'r c': 'rspec-focus:clear'
+  'space r': 'autoflow:reflow-selection'
+
+'atom-text-editor.vim-mode.visual-mode':
+  's #': 'custom:surround-interpolation'
