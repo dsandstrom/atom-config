@@ -43,13 +43,13 @@
     'body': "it \"${1:does something}\"${2: do\n  $0\nend}$0"
   'expect':
     'prefix': 'exp'
-    'body': 'expect(${1:subject}).to${2:_not} ${3:${4:eq}(${5:object})}$0'
+    'body': 'expect(${1:subject}$2).${3:not_}to ${4:${5:eq}(${6:object})}$0'
   'expect with block':
     'prefix': 'expb'
     'body': '''
       expect do
         ${1:target}
-      end.to${2:_not} ${3:raise_error}$0
+      end.${2:not_}to ${3:change(${4:object}, :${5:method})}$0
     '''
   'expect with block to change':
     'prefix': 'expbc'
@@ -92,6 +92,9 @@
   'to_time':
     'prefix': 'tt'
     'body': 'to_time'
+  'byebug':
+    'prefix': 'bb'
+    'body': 'byebug'
 
 '.source.ruby':
   'flash':
