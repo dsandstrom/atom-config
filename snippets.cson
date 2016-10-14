@@ -96,7 +96,7 @@
     'prefix': 'bb'
     'body': 'byebug'
 
-'.source.ruby':
+'.source.ruby, .source.ruby.rails':
   'flash':
     'prefix': 'flash'
     'body': 'flash[:${1:notice}] = "${2:message}"'
@@ -121,6 +121,12 @@
   'rubocop:disable':
     'prefix': 'rd'
     'body': '# rubocop:disable $0'
+  'before_action':
+    'prefix': 'ba'
+    'body': 'before_action :${1:method}, ${2:only}: [:${3:index}$4]$0'
+  'Rails logger':
+    'prefix': 'log'
+    'body': 'Rails.logger.${1:debug} $0'
 
 '.text.html.ruby, .text.html.erb':
   "if block":
@@ -186,13 +192,17 @@
   'link_to destroy':
     'prefix': 'ltd'
     'body': """
-      <%=
-        link_to ${2:'${1:Delete}'},
-                ${4:@${3:widget}},
-                method: :delete,
-                data: { confirm: '${5:Are you sure?}' }
-      %>$0
+      <%= link_to ${2:'${1:Delete}'},
+                  ${4:@${3:widget}},
+                  method: :delete,
+                  data: { confirm: '${5:Are you sure?}' } %>$0
     """
+  'content_tag':
+    'prefix': 'ct'
+    'body': '<%= content_tag :${1:p} %>$0'
+  'render':
+    'prefix': 'ren'
+    'body': "<%= render ${1:'${2:partial}'} %>$0"
 
 '.text.html.php':
   'php visible tag':
