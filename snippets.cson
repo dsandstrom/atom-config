@@ -1,10 +1,10 @@
 '.source.ruby.rspec':
   'before (multi-line)':
     'prefix': 'bef'
-    'body': 'before do\n  $1\nend$0'
+    'body': 'before do\n  $1\nend'
   'before (one-line)':
     'prefix': 'b'
-    'body': 'before { $1 }$0'
+    'body': 'before { $1 }'
   'it (one-line)':
     'prefix': 'itt'
     'body': 'it { $1 }'
