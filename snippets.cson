@@ -61,6 +61,9 @@
   'expect response to redirect':
     'prefix': 'exprr'
     'body': 'expect(response).to redirect_to ${2:${1:root}_path}$0'
+  'expect response to redirect':
+    'prefix': 'redt'
+    'body': 'expect(response).to redirect_to(${1::${2:root}})$0'
   'expect response to render template':
     'prefix': 'exprt'
     'body': 'expect(response).to render_template :${1:index}$0'
