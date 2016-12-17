@@ -278,7 +278,7 @@
     'prefix': 'vd'
     'body': 'var_dump($${1:variable});'
 
-'.source.scss':
+'.source.css, .source.scss, .source.css.scss, .source.less, .source.css.less':
   '@media #{$size}':
     prefix: 'med$'
     body: '@media #{$${1:size}} {\n  $2\n}$0'
@@ -315,6 +315,9 @@
   'Sass Linter Disable':
     'prefix': 'sld'
     'body': '// scss-lint:disable $0'
+  'line-height':
+    'prefix': 'lh'
+    'body': 'line-height: ${1:1};'
 
 '.source.js':
   'variable (with assignment)':
