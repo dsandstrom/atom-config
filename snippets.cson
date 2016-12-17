@@ -235,6 +235,9 @@
   'render helper method':
     'prefix': 'ren'
     'body': "<?= $h->render('${1:partial}') ?>"
+  'var_dump':
+    'prefix': 'vd'
+    'body': "<?= var_dump($${1:variable}); ?>"
 
 '.source.php':
   'function':
