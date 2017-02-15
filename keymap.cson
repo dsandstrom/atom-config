@@ -135,9 +135,6 @@
   'cmd-w q':     'core:close'
   'ctrl-p':      'clipboard-plus:toggle'
 
-'.platform-linux atom-text-editor.vim-mode:not(.insert-mode)':
-  'cmd-p': 'clipboard-plus:toggle'
-
 '.platform-darwin atom-text-editor:not([mini])':
   'cmd-shift-v': 'clipboard-plus:toggle'
 
@@ -145,6 +142,7 @@
   'ctrl-shift-v': 'clipboard-plus:toggle'
 
 '.platform-linux atom-text-editor.vim-mode:not(.insert-mode)':
+  'cmd-p': 'clipboard-plus:toggle'
   'ctrl-d': 'find-and-replace:select-next'
   'ctrl-u': 'find-and-replace:select-undo'
 
@@ -162,6 +160,7 @@
   'r f': 'rspec-focus:add'
   'r c': 'rspec-focus:clear'
   'space r': 'autoflow:reflow-selection'
+  'g l': 'linter:next-error'
 
 'atom-text-editor.vim-mode.visual-mode':
   's #': 'custom:surround-interpolation'
