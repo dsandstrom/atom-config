@@ -10,7 +10,7 @@
 // }
 
 // https://medium.com/@tgaeta/atom-font-rendering-fix-and-theme-suggestion-9a57b7bbf6a5
-// atom-text-editor::shadow {
+// atom-text-editor {
 //   -webkit-font-smoothing: auto;
 // }
 //
@@ -29,9 +29,9 @@ status-bar {
 // }
 
 // rounds out pigments' square dot
-atom-text-editor::shadow pigments-markers::shadow pigments-color-marker.dot.square,
-pigments-markers::shadow pigments-color-marker.dot.square,
-pigments-color-marker.dot.square {
+atom-text-editor pigments-markers pigments-color-marker.syntax--dot.syntax--square,
+pigments-markers pigments-color-marker.syntax--dot.syntax--square,
+pigments-color-marker.syntax--dot.syntax--square {
   border-radius: .2em;
   width: .8em;
   height: .8em;
@@ -48,13 +48,13 @@ pigments-color-marker.dot.square {
 // }
 
 // Makes the cursor pulse instead of blink
-atom-text-editor::shadow {
+atom-text-editor {
   .cursor {
     transition: opacity 1.6s;
   }
 }
 
-// atom-text-editor::shadow {
+// atom-text-editor {
 //   .gutter-shadow.active {
 //     box-shadow: inset 0 0 7px 4px rgba(255, 255, 255, .10);;
 
@@ -62,7 +62,7 @@ atom-text-editor::shadow {
 // .tab-bar, atom-panel-container.bottom{
 //   z-index: 2;
 // }
-// atom-text-editor::shadow{
+// atom-text-editor{
 //   .gutter{
 //     z-index: 1;
 //     box-shadow: 0.5rem 0 2rem hsl(0, 0%, 5%);
@@ -72,7 +72,7 @@ atom-text-editor::shadow {
 //   }
 // }
 
-// atom-text-editor::shadow .absolute {
+// atom-text-editor .absolute {
 //   display: inline;
 //   opacity: 0.5;
 //   padding-right: 1em;
@@ -90,11 +90,11 @@ atom-text-editor::shadow {
 
 // fixes current line highlight
 // by moving linter gutter on top of number gutter
-atom-text-editor::shadow .gutter-container {
+atom-text-editor .gutter-container {
   position: relative;
 }
 
-atom-text-editor::shadow .gutter[gutter-name="linter"] {
+atom-text-editor .gutter[gutter-name="linter"] {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -116,63 +116,17 @@ atom-text-editor::shadow .gutter[gutter-name="linter"] {
 //   }
 // }
 
-atom-text-editor::shadow .relative.current-line {
+// relative line numbers - current line
+atom-text-editor .relative.current-line {
   color: #797979;
 }
 
-.tab-bar {
-  padding-top: 4px;
-  height: auto;
-
-  .tab {
-    height: auto;
-    border-bottom-width: 0;
-    border-top: 2px solid #1e1e1e;
-    padding-bottom: 2px;
-  }
-}
-
-// titlebar
-
-// @title-bar-text-size: 13px;
-// @title-bar-height: 23px;
-@title-bar-background-color: @tree-view-background-color;
-// @title-bar-border-color: @title-bar-background-color;
-// @title-color: @text-color-subtle;
-
-// body.fullscreen .title-bar {
-//   margin-top: -@title-bar-height;
+// .input-checkbox {
+//   background-color: @steel;
+//
+//   &:checked {
+//     background-color: @text-color-success;
+//   }
 // }
 
-.title-bar {
-  // height: @title-bar-height;
-  // transition: margin-top 160ms;dfs
-
-  // flex-shrink: 0;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-
-  // font-size: @title-bar-text-size;
-  // -webkit-user-select: none;
-  // -webkit-app-region: drag;
-
-  // padding: 0 70px;
-  // overflow: hidden;
-  color: @text-color-subtle;
-
-  // .title {
-  //   flex: 0 1 auto;
-  //   overflow: hidden;
-  //   white-space: nowrap;
-  //   text-overflow: ellipsis;
-  // }
-
-  background-color: @title-bar-background-color;
-  // border-bottom: 1px solid @title-bar-border-color;
-  border-width: 0;
-
-  .is-blurred & {
-    color: @text-color-faded;
-  }
-}
+// @background-color-info: @text-color-success;
