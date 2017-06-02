@@ -159,7 +159,8 @@
   'r f': 'rspec-focus:add'
   'r c': 'rspec-focus:clear'
   'space r': 'autoflow:reflow-selection'
-  'g l': 'linter:next-error'
+  'g l n': 'linter-ui-default:next-in-current-file'
+  'g l p': 'linter-ui-default:next-in-current-file'
 
 'atom-text-editor.vim-mode.visual-mode':
   's #': 'custom:surround-interpolation'
