@@ -90,21 +90,26 @@ atom-text-editor {
 
 // fixes current line highlight
 // by moving linter gutter on top of number gutter
-atom-text-editor .gutter-container {
-  position: relative;
-}
+// atom-text-editor .gutter-container {
+//   position: relative;
+// }
 
-atom-text-editor .gutter[gutter-name="linter"] {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background-color: transparent;
-
-  .custom-decorations {
-    background-color: transparent !important;
-  }
-}
+// atom-text-editor {
+//   .gutter[gutter-name="linter"],
+//   .gutter[gutter-name="linter-ui-default"] {
+//     // position: relative;
+//     // z-index: 100;
+//     // position: absolute;
+//     // right: 0;
+//     // bottom: 0;
+//     // top: 0;
+//     // background-color: transparent;
+//     //
+//     // .custom-decorations {
+//     //   background-color: transparent !important;
+//     // }
+//   }
+// }
 
 // .term3 .terminal {
 //   background: transparent !important;
