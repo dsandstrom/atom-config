@@ -2,9 +2,6 @@
   'f12': 'window:toggle-dev-tools'
   'cmd-shift-n': 'advanced-open-file:toggle'
 
-'atom-text-editor':
-  'shift-space': 'custom:add-space-after'
-
 '.platform-linux atom-workspace':
   'ctrl-{': 'pane:show-previous-item'
   'ctrl-}': 'pane:show-next-item'
@@ -13,7 +10,7 @@
 
 # '.platform-linux atom-text-editor.vim-mode.insert-mode':
 #   'ctrl-w': 'core:close'
-'.platform-linux atom-text-editor.vim-mode.command-mode':
+'.platform-linux atom-text-editor.vim-mode.command-mode, .platform-linux atom-text-editor.vim-mode-plus.command-mode':
   'ctrl-shift-t': 'pane:reopen-closed-item'
 
 # 'atom-text-editor':
@@ -108,32 +105,34 @@
   'cmd-space':      'non-navigation:move-right'
   # 'cmd-s':          'seq:vim-save'
 
-'.platform-darwin atom-text-editor.vim-mode:not(.insert-mode)':
-  'cmd-w cmd-h': 'vim-mode:focus-pane-view-on-left'
-  'cmd-w h':     'vim-mode:focus-pane-view-on-left'
-  'cmd-w left':  'window:focus-pane-on-left'
-  'cmd-w cmd-l': 'vim-mode:focus-pane-view-on-right'
-  'cmd-w l':     'vim-mode:focus-pane-view-on-right'
-  'cmd-w right': 'window:focus-pane-on-right'
-  'cmd-w cmd-k': 'vim-mode:focus-pane-view-above'
-  'cmd-w k':     'vim-mode:focus-pane-view-above'
-  'cmd-w up':    'window:focus-pane-above'
-  'cmd-w cmd-j': 'vim-mode:focus-pane-view-below'
-  'cmd-w j':     'vim-mode:focus-pane-view-below'
-  'cmd-w down':  'window:focus-pane-below'
-  'cmd-w cmd-w': 'window:focus-next-pane'
-  'cmd-w w':     'window:focus-next-pane'
-  'cmd-w cmd-p': 'vim-mode:focus-previous-pane-view'
-  'cmd-w p':     'window:focus-previous-pane'
-  'cmd-w cmd-v': 'pane:split-right'
-  'cmd-w v':     'pane:split-right'
-  'cmd-w cmd-s': 'pane:split-down'
-  'cmd-w s':     'pane:split-down'
-  'cmd-w cmd-c': 'pane:close'
-  'cmd-w c':     'pane:close'
-  'cmd-w cmd-q': 'core:close'
-  'cmd-w q':     'core:close'
+'.platform-darwin atom-text-editor.vim-mode:not(.insert-mode), .platform-darwin atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  # 'cmd-w cmd-h': 'vim-mode:focus-pane-view-on-left'
+  # 'cmd-w h':     'vim-mode:focus-pane-view-on-left'
+  # 'cmd-w left':  'window:focus-pane-on-left'
+  # 'cmd-w cmd-l': 'vim-mode:focus-pane-view-on-right'
+  # 'cmd-w l':     'vim-mode:focus-pane-view-on-right'
+  # 'cmd-w right': 'window:focus-pane-on-right'
+  # 'cmd-w cmd-k': 'vim-mode:focus-pane-view-above'
+  # 'cmd-w k':     'vim-mode:focus-pane-view-above'
+  # 'cmd-w up':    'window:focus-pane-above'
+  # 'cmd-w cmd-j': 'vim-mode:focus-pane-view-below'
+  # 'cmd-w j':     'vim-mode:focus-pane-view-below'
+  # 'cmd-w down':  'window:focus-pane-below'
+  # 'cmd-w cmd-w': 'window:focus-next-pane'
+  # 'cmd-w w':     'window:focus-next-pane'
+  # 'cmd-w cmd-p': 'vim-mode:focus-previous-pane-view'
+  # 'cmd-w p':     'window:focus-previous-pane'
+  # 'cmd-w cmd-v': 'pane:split-right'
+  # 'cmd-w v':     'pane:split-right'
+  # 'cmd-w cmd-s': 'pane:split-down'
+  # 'cmd-w s':     'pane:split-down'
+  # 'cmd-w cmd-c': 'pane:close'
+  # 'cmd-w c':     'pane:close'
+  # 'cmd-w cmd-q': 'core:close'
+  # 'cmd-w q':     'core:close'
   'ctrl-p':      'clipboard-plus:toggle'
+  'ctrl-d': 'find-and-replace:select-next'
+  'ctrl-u': 'find-and-replace:select-undo'
 
 '.platform-darwin atom-text-editor:not([mini])':
   'cmd-shift-v': 'clipboard-plus:toggle'
@@ -141,12 +140,12 @@
 '.platform-linux atom-text-editor:not([mini])':
   'ctrl-shift-v': 'clipboard-plus:toggle'
 
-'.platform-linux atom-text-editor.vim-mode:not(.insert-mode)':
+'.platform-linux atom-text-editor.vim-mode:not(.insert-mode), .platform-linux atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'cmd-p': 'clipboard-plus:toggle'
   'ctrl-d': 'find-and-replace:select-next'
   'ctrl-u': 'find-and-replace:select-undo'
 
-'atom-text-editor.vim-mode:not(.insert-mode)':
+'atom-text-editor.vim-mode:not(.insert-mode), atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'shift-enter': 'add-line-break:add-line-break-before'
   'enter': 'add-line-break:add-line-break-after'
   '[': 'editor:move-to-next-subword-boundary'
