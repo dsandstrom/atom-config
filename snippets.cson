@@ -331,3 +331,8 @@
   'variable (with function)':
     'prefix': 'varf'
     'body': 'var ${1:name} = function (${2:argument}) {\n  $3\n};'
+
+'.source.coffee':
+  'Class':
+    'prefix': 'cla'
+    'body': 'class ${1:ClassName}\n  constructor:${3: (${2:args})} ->\n    $0'
