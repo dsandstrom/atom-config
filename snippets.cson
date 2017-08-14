@@ -161,18 +161,6 @@
         ${2:false-block}
       <% end %>$0
     """
-  "end tag":
-    prefix: "end"
-    body: "<% end %>$0"
-  'erb tags':
-    'prefix': '<'
-    'body': '<%${1:=} $2 %>$0'
-  'erb tags (invisible)':
-    'prefix': '%'
-    'body': '<% $1 %>$0'
-  'erb tags (visible)':
-    'prefix': '='
-    'body': '<%= $1 %>$0'
   'debug':
     'prefix': 'debug'
     'body': '<%= debug $1 %>$0'
@@ -206,6 +194,20 @@
   'render':
     'prefix': 'ren'
     'body': "<%= render ${1:'${2:partial}'} %>$0"
+
+'.text.html.ruby, .text.html.erb, .text.html.elixir':
+  'erb tags':
+    'prefix': '<'
+    'body': '<%${1:=} $2 %>$0'
+  'erb tags (invisible)':
+    'prefix': '%'
+    'body': '<% $1 %>$0'
+  'erb tags (visible)':
+    'prefix': '='
+    'body': '<%= $1 %>$0'
+  "end tag":
+    prefix: "end"
+    body: "<% end %>$0"
 
 '.text.html.php':
   'php visible tag':
