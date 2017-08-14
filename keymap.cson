@@ -161,6 +161,12 @@
   'space r': 'autoflow:reflow-selection'
   'g l n': 'linter-ui-default:next-in-current-file'
   'g l p': 'linter-ui-default:next-in-current-file'
+  'g r m': 'rails-transporter:open-model'
+  'g r c': 'rails-transporter:open-controller'
+  'g r s': 'rails-transporter:open-spec'
+  'g r t': 'rails-transporter:open-test'
+  'g r f': 'rails-transporter:open-factory'
+  'g r h': 'rails-transporter:open-helper'
 
 'atom-text-editor.vim-mode.visual-mode':
   's #': 'custom:surround-interpolation'
