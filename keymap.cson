@@ -26,16 +26,11 @@
   'ctrl-space':    'non-navigation:move-right'
 
 '.platform-darwin atom-text-editor':
-  'cmd-k cmd-a':    'find-and-replace:select-all'
-  'alt-shift-up':   'expand-region:expand'
-  'alt-shift-down': 'expand-region:shrink'
-  'ctrl-alt-/':     'aligner:align'
-  'ctrl-k':         'core:move-up'
-  'ctrl-j':         'core:move-down'
-  'ctrl-h':         'core:move-left'
-  'ctrl-l':         'core:move-right'
-  'cmd-space':      'non-navigation:move-right'
-  # 'cmd-s':          'seq:vim-save'
+  'cmd-k':         'core:move-up'
+  'cmd-j':         'core:move-down'
+  'cmd-h':         'core:move-left'
+  'cmd-l':         'core:move-right'
+  'cmd-k cmd-a': 'find-and-replace:select-all'
 
 '.platform-darwin atom-text-editor.vim-mode:not(.insert-mode), .platform-darwin atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'ctrl-p': 'clipboard-plus:toggle'
