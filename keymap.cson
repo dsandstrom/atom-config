@@ -8,82 +8,14 @@
   'ctrl-|': 'autohide-tree-view:toggle-enabled'
   'ctrl-N': 'advanced-open-file:toggle'
 
-# '.platform-linux atom-text-editor.vim-mode.insert-mode':
-#   'ctrl-w': 'core:close'
-'.platform-linux atom-text-editor.vim-mode.command-mode, .platform-linux atom-text-editor.vim-mode-plus.command-mode':
-  'ctrl-shift-t': 'pane:reopen-closed-item'
-
-# 'atom-text-editor':
-#   'cmd-shift-u': 'user:paste-below'
-
-# Ruby Test
-# '.platform-linux body':
-#   'ctrl-shift-x': 'ruby-test:toggle'
-#   'ctrl-shift-W': 'ruby-test:test-previous'
-#   'ctrl-shift-c': 'ruby-test:cancel'
-#   'f12': 'window:toggle-dev-tools'
-#   'ctrl-=': 'native!'
-#   'ctrl--': 'native!'
-
-'.platform-darwin atom-workspace':
-  # 'f12': 'window:toggle-dev-tools'
-  'cmd-=':       'native!'
-  'cmd-+':       'native!'
-  'cmd--':       'native!'
-  'cmd-_':       'native!'
-  'cmd-q':       'maybs-quit:toggle'
-  'cmd-h':       'null'
-  'cmd-k cmd-[': 'window:focus-pane-on-left'
-  'cmd-k cmd-]': 'window:focus-pane-on-right'
-  'cmd-w':       'null'
-  'cmd-|':       'autohide-tree-view:toggle-enabled'
-  'cmd-w cmd-q': 'core:close'
-  'cmd-w q':     'core:close'
-
 '.platform-linux atom-workspace atom-text-editor':
   'ctrl-space': 'non-navigation:move-right'
-  # Basic
   'ctrl-alt-t': 'editor:transpose'
-  # Duplicate and Comment
-  # 'ctrl-alt-/': 'duplicate-and-comment:duplicateAndComment'
-  # 'ctrl-r': 'goto:file-symbol'
-  # 'ctrl-shift-t': 'goto:project-symbol'
-  # 'ctrl-alt-down': 'goto:declaration'
   'alt-k': 'subword-navigation:delete-right'
 
-'.platform-darwin body atom-text-editor':
-  'cmd-left':        'editor:move-to-beginning-of-word'
-  'cmd-right':       'editor:move-to-end-of-word'
-  'cmd-shift-left':  'editor:select-to-beginning-of-word'
-  'cmd-shift-right': 'editor:select-to-end-of-word'
-  'alt-left':        'editor:move-to-first-character-of-line'
-  'alt-right':       'editor:move-to-end-of-screen-line'
-  'alt-shift-left':  'editor:select-to-first-character-of-line'
-  'alt-shift-right': 'editor:select-to-end-of-line'
-  'cmd-backspace':   'editor:delete-to-beginning-of-word'
-  'alt-backspace':   'editor:delete-to-beginning-of-line'
-  'cmd-g':           'go-to-line:toggle'
-  'ctrl-g':          'find-and-replace:find-next'
-  'ctrl-alt-k':      'subword-navigation:delete-right'
-
-# '.platform-darwin body atom-text-editor:not(.mini)':
-#   # 'ctrl-alt-p': "window:run-package-specs"
-#   # 'shift-cmd-y': 'ruby-test:test-all'
-#   # 'shift-cmd-r': 'ruby-test:test-file'
-#   # 'shift-cmd-e': 'ruby-test:test-single'
-#   # 'shift-cmd-w': 'ruby-test:test-previous'
-#   # required to override copy path
-#   # 'shift-cmd-c': 'ruby-test:cancel'
-#   # 'shift-cmd-x': 'ruby-test:toggle'
-#   # 'shift-cmd-c': 'core:'
-
 '.platform-linux atom-workspace atom-pane.active > .item-views > atom-text-editor':
-  # 'ctrl-c': 'clipboard-history:copy'
   'ctrl-c': 'core:copy'
   'ctrl-v': 'core:paste'
-
-# '.platform-darwin body .pane.active > .item-views > atom-text-editor':
-#   'cmd-c': 'clipboard-history:copy'
 
 '.platform-linux atom-text-editor':
   'ctrl-k ctrl-a': 'find-and-replace:select-all'
@@ -106,33 +38,7 @@
   # 'cmd-s':          'seq:vim-save'
 
 '.platform-darwin atom-text-editor.vim-mode:not(.insert-mode), .platform-darwin atom-text-editor.vim-mode-plus:not(.insert-mode)':
-  # 'cmd-w cmd-h': 'vim-mode:focus-pane-view-on-left'
-  # 'cmd-w h':     'vim-mode:focus-pane-view-on-left'
-  # 'cmd-w left':  'window:focus-pane-on-left'
-  # 'cmd-w cmd-l': 'vim-mode:focus-pane-view-on-right'
-  # 'cmd-w l':     'vim-mode:focus-pane-view-on-right'
-  # 'cmd-w right': 'window:focus-pane-on-right'
-  # 'cmd-w cmd-k': 'vim-mode:focus-pane-view-above'
-  # 'cmd-w k':     'vim-mode:focus-pane-view-above'
-  # 'cmd-w up':    'window:focus-pane-above'
-  # 'cmd-w cmd-j': 'vim-mode:focus-pane-view-below'
-  # 'cmd-w j':     'vim-mode:focus-pane-view-below'
-  # 'cmd-w down':  'window:focus-pane-below'
-  # 'cmd-w cmd-w': 'window:focus-next-pane'
-  # 'cmd-w w':     'window:focus-next-pane'
-  # 'cmd-w cmd-p': 'vim-mode:focus-previous-pane-view'
-  # 'cmd-w p':     'window:focus-previous-pane'
-  # 'cmd-w cmd-v': 'pane:split-right'
-  # 'cmd-w v':     'pane:split-right'
-  # 'cmd-w cmd-s': 'pane:split-down'
-  # 'cmd-w s':     'pane:split-down'
-  # 'cmd-w cmd-c': 'pane:close'
-  # 'cmd-w c':     'pane:close'
-  # 'cmd-w cmd-q': 'core:close'
-  # 'cmd-w q':     'core:close'
-  'ctrl-p':      'clipboard-plus:toggle'
-  'ctrl-d': 'find-and-replace:select-next'
-  'ctrl-u': 'find-and-replace:select-undo'
+  'ctrl-p': 'clipboard-plus:toggle'
 
 '.platform-darwin atom-text-editor:not([mini])':
   'cmd-shift-v': 'clipboard-plus:toggle'
@@ -141,7 +47,7 @@
   'ctrl-shift-v': 'clipboard-plus:toggle'
 
 '.platform-linux atom-text-editor.vim-mode:not(.insert-mode), .platform-linux atom-text-editor.vim-mode-plus:not(.insert-mode)':
-  'cmd-p': 'clipboard-plus:toggle'
+  'ctrl-p': 'clipboard-plus:toggle'
   'ctrl-d': 'find-and-replace:select-next'
   'ctrl-u': 'find-and-replace:select-undo'
 
