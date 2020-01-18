@@ -8,7 +8,7 @@
   'it (one-line)':
     'prefix': 'itt'
     'body': 'it { $1 }'
-  'it (one-line)':
+  'it expect (one-line)':
     'prefix': 'ite'
     'body': 'it { expect(${1:subject}$2).to${3:_not} ${4:${5:eq} ${6:object}}$0 }'
   'after (one-line)':
