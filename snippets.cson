@@ -161,9 +161,6 @@
   'debug':
     'prefix': 'debug'
     'body': '<%= debug $1 %>$0'
-  'render':
-    'prefix': 'render'
-    'body': '<%= render ${2:\'${1:partial}\'} %>$0'
   'link_to':
     'prefix': 'lt'
     'body': "<%= link_to ${2:'${1:text}'}, ${3:path} %>$0"
