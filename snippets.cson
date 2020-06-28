@@ -16,19 +16,22 @@
     'body': 'after { $1 }$0'
   'let factory':
     'prefix': 'letf'
-    'body': 'let(:${2:${1:model}}$3) { create(:${1:model}$4) }$0'
+    'body': 'let(:${2:${1:model}}$3) { Fabricate(:${1:model}$4) }$0'
   'let factory build':
     'prefix': 'letfb'
     'body': 'let(:${2:${1:model}}$3) { build(:${1:model}$4) }$0'
   'let factory !':
     'prefix': 'letf!'
-    'body': 'let!(:${2:${1:model}}$3) { create(:${1:model}$4) }$0'
-  'factory create':
+    'body': 'let!(:${2:${1:model}}$3) { Fabricate(:${1:model}$4) }$0'
+  'factory Fabricate (fgc)':
     'prefix': 'fgc'
-    'body': 'create(:${1:model})$0'
+    'body': 'Fabricate(:${1:model})$0'
   'factory build':
     'prefix': 'fgb'
     'body': 'build(:${1:model})$0'
+  'factory Fabricate':
+    'prefix': 'fab'
+    'body': 'Fabricate(:${1:model})$0'
   'subject':
     'prefix': 'sub'
     'body': 'subject { ${1:test_subject} }$0'
