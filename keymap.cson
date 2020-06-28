@@ -26,10 +26,12 @@
   'ctrl-space':    'non-navigation:move-right'
 
 '.platform-darwin atom-text-editor':
-  'cmd-k':         'core:move-up'
-  'cmd-j':         'core:move-down'
-  'cmd-h':         'core:move-left'
-  'cmd-l':         'core:move-right'
+  'cmd-k': 'core:move-up'
+  'cmd-j': 'core:move-down'
+  'cmd-h': 'core:move-left'
+  'cmd-l': 'core:move-right'
+  'f3': 'git-diff:move-to-next-diff'
+  'cmd-f3': 'git-diff:toggle-diff-list'
   'cmd-k cmd-a': 'find-and-replace:select-all'
 
 '.platform-darwin atom-text-editor.vim-mode:not(.insert-mode), .platform-darwin atom-text-editor.vim-mode-plus:not(.insert-mode)':
